@@ -1,0 +1,11 @@
+pending_feedback:
+  type: pandas.SQLQueryDataset
+  credentials: postgres_db
+  sql: SELECT * FROM feedback WHERE processing_status = 'pending'
+
+processed_feedback:
+  type: pandas.SQLTableDataset
+  credentials: postgres_db
+  table_name: feedback_updates
+  save_args:
+    if_exists: append

@@ -1,0 +1,4 @@
+postgres_db:
+  con: postgresql://yanakravets@localhost:5432/transport_rent_db
+
+gemini_api_key: "AIzaSyBfNKi6kpCuZSV37OQ4RDOib3AAkdaVQHk"
