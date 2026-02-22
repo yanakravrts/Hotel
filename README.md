@@ -1,1 +1,5 @@
 # Hotel
+
+```bash
+kedro run
+```
