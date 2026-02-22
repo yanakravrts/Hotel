@@ -1,5 +1,5 @@
 import pandas as pd
-from google import genai
+import google.generativeai as genai
 import logging
 import time
 from datetime import datetime
@@ -75,9 +75,9 @@ def update_table(processed_data, credentials):
             SET 
                 sentimental_label = u.sentimental_label,
                 processing_status = u.processing_status,
-                processed_at = u.processed_at
+                processed_at = u.processed_at::timestamp
             FROM feedback_updates u
-            WHERE f.feedback_id = u.feedback_id;
+            WHERE f.feedback_id = u.feedback_id::integer;
         """))
         conn.execute(text("DROP TABLE feedback_updates;"))
         conn.commit()
